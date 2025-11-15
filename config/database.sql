@@ -1,4 +1,13 @@
 -- ============================================================
+-- SELECTS
+-- ============================================================
+
+select * from roles;
+select * from usuarios;
+
+
+
+-- ============================================================
 --  TABLA: roles
 -- ============================================================
 CREATE TABLE roles (
@@ -79,4 +88,27 @@ CREATE TABLE ticket_entradas (
 
     CONSTRAINT fk_ticket FOREIGN KEY (ticket_id) REFERENCES tickets(id),
     CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES usuarios(id)
+);
+
+-- ============================================================
+--  INSERTS
+-- ============================================================
+INSERT INTO roles (nombre) VALUES 
+('Superadministrador'),
+('Operador'),
+('Usuario');
+
+-- Crear usuario super administrador 
+INSERT INTO usuarios (
+    nombre_completo,
+    username,
+    password_hash,
+    rol_id,
+    activo
+) VALUES (
+    'Super Administrador',
+    'admin',
+    '$2y$10$Jj1zPqvHfaRelVn.BcELC.hb3uLU9VxzIPZFpGDbI.Y0QuQt48PPS',
+    1,
+    1
 );
