@@ -1,3 +1,5 @@
+
+
 -- ============================================================
 -- SELECTS
 -- ============================================================
@@ -32,6 +34,10 @@ CREATE TABLE usuarios (
 
     CONSTRAINT fk_rol FOREIGN KEY (rol_id) REFERENCES roles(id)
 );
+
+ALTER TABLE usuarios
+    CHANGE COLUMN password_hash password VARCHAR(255) NOT NULL;
+
 
 
 -- ============================================================
@@ -90,25 +96,25 @@ CREATE TABLE ticket_entradas (
     CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES usuarios(id)
 );
 
+
 -- ============================================================
---  INSERTS
+--  INSERTS 
 -- ============================================================
 INSERT INTO roles (nombre) VALUES 
 ('Superadministrador'),
 ('Operador'),
 ('Usuario');
 
--- Crear usuario super administrador 
 INSERT INTO usuarios (
     nombre_completo,
     username,
-    password_hash,
+    password,
     rol_id,
     activo
 ) VALUES (
     'Super Administrador',
     'admin',
-    '$2y$10$Jj1zPqvHfaRelVn.BcELC.hb3uLU9VxzIPZFpGDbI.Y0QuQt48PPS',
+    '$2b$10$TydAvU3tGxQt5CwNc.KRKujzK0.yTBPJN5RYJDcRFR8f9MjStcvbe',
     1,
     1
 );
