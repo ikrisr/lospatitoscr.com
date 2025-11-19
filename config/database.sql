@@ -118,3 +118,11 @@ INSERT INTO usuarios (
     1,
     1
 );
+
+-- ============================================================
+--  Indexes para rendimiento
+-- ============================================================
+
+CREATE INDEX idx_ticket_usuario ON tickets(usuario_id);
+CREATE INDEX idx_ticket_operador ON tickets(operador_id);
+CREATE INDEX idx_entradas_ticket ON ticket_entradas(ticket_id);
