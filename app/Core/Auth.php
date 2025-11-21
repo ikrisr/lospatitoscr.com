@@ -14,12 +14,9 @@ class Auth
 
     public static function role($roles = [])
     {
-        self::check();
+        $actual = $_SESSION['rol'] ?? null;
 
-        $rolUsuario = $_SESSION['rol'] ?? null;
-
-        if (!in_array($rolUsuario, $roles)) {
-            http_response_code(403);
+        if (!in_array($actual, $roles)) {
             echo "Acceso denegado";
             exit;
         }
@@ -29,6 +26,5 @@ class Auth
     {
         session_destroy();
         header("Location: /login");
-        exit;
     }
 }
