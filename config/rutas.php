@@ -15,7 +15,8 @@ $router->post('/login', 'AuthController@login');
 $router->get('/logout', 'AuthController@logout');
 
 // Dashboard según rol
-$router->get('/dashboard', 'AuthController@dashboard');
+//$router->get('/dashboard', 'AuthController@dashboard');
+$router->get('/dashboard', 'DashboardController@index');
 
 /*
 |--------------------------------------------------------------------------
