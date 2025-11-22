@@ -39,11 +39,13 @@ $router->get('/admin/usuarios/desactivar/{id}', 'UserController@desactivar');
 | USUARIO – Crear y ver sus Tickets
 |--------------------------------------------------------------------------
 */
-
+// Formulario para crear ticket
 $router->get('/tickets/crear', 'TicketController@crear');
+// Guardar ticket
 $router->post('/tickets/guardar', 'TicketController@guardar');
-
+// Ver todos mis tickets
 $router->get('/tickets/mis-tickets', 'TicketController@misTickets');
+// Ver detalle de ticket
 $router->get('/tickets/detalle/{id}', 'TicketController@detalle');
 
 /*

@@ -25,9 +25,6 @@
       <a href="/tickets/crear"
          class="block px-4 py-2 rounded hover:bg-gray-700">Crear Ticket</a>
 
-      <a href="/tickets/historial"
-         class="block px-4 py-2 rounded hover:bg-gray-700">Historial</a>
-
       <hr class="border-gray-600 my-4">
 
       <a href="/logout"
